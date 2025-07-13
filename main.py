@@ -59,6 +59,8 @@ async def on_message(message):
 #stops losers from editing comments
 @bot.event
 async def on_message_edit(before, after):
+    if before.author.bot:
+        return
     await after.reply(f"Look at this virgin editing messages. Jury is gonna spank you with his punishment noodle.\nOriginal message '{before.content}'.\nYou disgust me.")
 
 
