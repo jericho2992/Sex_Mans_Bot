@@ -61,6 +61,8 @@ async def on_message(message):
 async def on_message_edit(before, after):
     if before.author.bot:
         return
+    if 'http' in before:
+        return
     await after.reply(f"Look at this virgin editing messages. Jury is gonna spank you with his punishment noodle.\nOriginal message '{before.content}'.\nYou disgust me.")
 
 
